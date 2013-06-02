@@ -17,3 +17,20 @@ div.detail {
   color:blue;
   height:80px;
 }
+
+#sidebar {
+  float: left;
+  width: 350px;
+  height: 100%;
+  margin-left: -350px;
+}
+
+body {
+  padding-left: 350px;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+  float: right;
+}

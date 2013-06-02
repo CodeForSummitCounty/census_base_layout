@@ -25,6 +25,49 @@
   });
   </script>
   <link rel="stylesheet" type="text/css" href="main.css"/>
+  <link rel="stylesheet" href="//libs.cartocdn.com/cartodb.js/v2/themes/css/cartodb.css" />
+  <!--[if lte IE 8]>
+      <link rel="stylesheet" href="//libs.cartocdn.com/cartodb.js/v2/themes/css/cartodb.ie.css" />
+  <![endif]-->
+
+  <link rel="stylesheet" href="//cdn.leafletjs.com/leaflet-0.5/leaflet.css" />
+  <!--[if lte IE 8]>
+    <link rel="stylesheet" href="//cdn.leafletjs.com/leaflet-0.5/leaflet.ie.css" />
+  <![endif]-->
+
+  <script src="//cdn.leafletjs.com/leaflet-0.5/leaflet.js"></script>
+  <script src="//libs.cartocdn.com/cartodb.js/v2/cartodb.js"></script>
+
+  <script>
+    <!--
+    $(document).ready(function() {
+      var map = L.map('map').setView([41.241667, -81.549722], 12);
+
+      L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
+        attribution: 'Map data © OpenStreetMap contributors'
+      }).addTo(map);
+
+      cartodb.createLayer(map, {
+        type: 'cartodb',
+        options: {
+          table_name: 'census_blocks',
+          user_name: 'cfsc'
+        }
+      }).done(function(layer) {
+        map.addLayer(layer);
+      });
+      cartodb.createLayer(map, {
+        type: 'cartodb',
+        options: {
+          table_name: 'cvnp_trails',
+          user_name: 'cfsc'
+        }
+      }).done(function(layer) {
+        map.addLayer(layer);
+      });
+    });
+    -->
+  </script>
 </head>
 <body>
 <div style="float:left;width:350px;height:95%;padding-left:8px;padding-top:8px;">
@@ -60,6 +103,6 @@
     </div>
   </div>
 </div>
-<div id="map_div" style="float:left;padding-left:18px;margin-top:5%;width:70%;height:200px"></div>
+<div id="map" style="float:left;padding-left:18px;margin-top:5%;width:70%;height:200px"></div>
 </body>
 </html>

@@ -1,30 +1,30 @@
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="http://bootswatch.com/amelia/bootstrap.min.css"/>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.1/jquery.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function() {
-  $('.SummitCountyparks').hide();
-  $('.CVNPparks').hide();
-  $('.CuyahogaCountyparks').hide();
-  $( "#accordion_bottom").accordion({collapsible: true, autoHeight: false}); 
-  $.ajax({
-    url: "http://api.census.gov/data/2010/sf1?get=P0010001&for=state:*&key=c494feb17269e3f3e0bba78162e9d8d260d7c406",
-    success: function(data) {
-      $('#map_div').html(data);
-    }
+  <link rel="stylesheet" type="text/css" href="http://bootswatch.com/amelia/bootstrap.min.css"/>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.1/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function() {
+    $('.SummitCountyparks').hide();
+    $('.CVNPparks').hide();
+    $('.CuyahogaCountyparks').hide();
+    $( "#accordion_bottom").accordion({collapsible: true, autoHeight: false}); 
+    $.ajax({
+      url: "http://api.census.gov/data/2010/sf1?get=P0010001&for=state:*&key=c494feb17269e3f3e0bba78162e9d8d260d7c406",
+      success: function(data) {
+        $('#map_div').html(data);
+      }
+    });
+    $('.showhide').change(function(){
+      if($('#' + this.id).is(':checked')) {
+          $("." + this.id + "parks").show(); 
+      } else {
+        $("." + this.id + "parks").hide(); 
+      }
+    });
   });
-  $('.showhide').change(function(){
-    if($('#' + this.id).is(':checked')) {
-        $("." + this.id + "parks").show(); 
-    } else {
-      $("." + this.id + "parks").hide(); 
-    }
-  });
-});
-</script>
-<link rel="stylesheet" type="text/css" href="main.css"/>
+  </script>
+  <link rel="stylesheet" type="text/css" href="main.css"/>
 </head>
 <body>
 <div style="float:left;width:350px;height:95%;padding-left:8px;padding-top:8px;">

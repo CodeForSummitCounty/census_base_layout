@@ -70,39 +70,45 @@
   </script>
 </head>
 <body>
-<div id="sidebar">
-  <div id="accordion_bottom">
-    <h3>Step One: Select Park System(s)</h3>
-      <div class="detail"> 
-        <input class="showhide" type="checkbox" id="CuyahogaCounty">
-            Cuyahoga County <br/>
-        <input class="showhide" type="checkbox" id="CVNP"> 
-            CVNP <br/>
-        <input class="showhide" type="checkbox" id="SummitCounty"> 
-            Summit County <br/>
-      </div>
-      <h3 style="margin-bottom:0px;">Step Two: Select Park(s)</h3>
-        <div id="parklist" class="detail" style="margin-top:0px;overflow:scroll;">
-          <span class="CuyahogaCountyparks">  Cuyahoga Park<br/> </span>
-          <span class="CVNPparks">CVNP Park<br/> </span>
-          <span class="SummitCountyparks">Summit County Park<br/></span>
-            All Parks in Selected Count(ies)y. <br/>
-            Park<br/>
-            Park<br/>
-            Park<br/>
-            Park<br/>
-            Park<br/>
+<div id="header">
+  <h1>Parkscore</h1>
+</div>
+<div id="content">
+  <div id="sidebar">
+    <div id="accordion_bottom">
+      <h3>Step One: Select Park System(s)</h3>
+        <div class="detail"> 
+          <input class="showhide" type="checkbox" id="CuyahogaCounty">
+              Cuyahoga County <br/>
+          <input class="showhide" type="checkbox" id="CVNP"> 
+              CVNP <br/>
+          <input class="showhide" type="checkbox" id="SummitCounty"> 
+              Summit County <br/>
         </div>
-    <div style="text-align:center;vertical-align:bottom;"><br/>
-      <input type="button" value="Check Access By Park(s)"> 
-      <div>
-        <h2 style="margin-bottom:0px;margin-top:0px;">-OR-</h2>
-        LOG PARAMETERS
+        <h3 style="margin-bottom:0px;">Step Two: Select Park(s)</h3>
+          <div id="parklist" class="detail" style="margin-top:0px;overflow:scroll;">
+            <span class="CuyahogaCountyparks">  Cuyahoga Park<br/> </span>
+            <span class="CVNPparks">CVNP Park<br/> </span>
+            <span class="SummitCountyparks">Summit County Park<br/></span>
+              All Parks in Selected Count(ies)y. <br/>
+              Park<br/>
+              Park<br/>
+              Park<br/>
+              Park<br/>
+              Park<br/>
+          </div>
+      <div style="text-align:center;vertical-align:bottom;"><br/>
+        <input type="button" value="Check Access By Park(s)"> 
+        <div>
+          <h2 style="margin-bottom:0px;margin-top:0px;">-OR-</h2>
+          LOG PARAMETERS
+        </div>
+        <input type="button" value="Check Access By Address"> 
       </div>
-      <input type="button" value="Check Access By Address"> 
     </div>
   </div>
+  <div id="map"></div>
+  <br style="clear:both"/>
 </div>
-<div id="map"></div>
 </body>
 </html>

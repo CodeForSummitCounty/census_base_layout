@@ -1,0 +1,66 @@
+<html>
+<head>
+<link rel = "stylesheet" type = "text/css" href = "http://bootswatch.com/amelia/bootstrap.min.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.1/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-
+ui.min.js"></script>
+<script type = "text/javascript">
+$(document).ready(function() {
+        $( "#accordion_bottom").accordion({collapsible: true, autoHeight: false}); 
+});
+</script>
+<style type = "text/css">
+body {
+font-family:Times New Roman;
+font-size:16px;
+}
+h2 {
+font-family:Times New Roman;
+}
+h3{
+background-color:#8B2228;
+font-family:Times New Roman;
+border-top:thin solid #D5E6EE;
+margin-top:0px;
+margin-bottom:0px;
+}
+div.detail {
+background-color:#D5E6EE;
+color:blue;
+height:80px;
+}
+</style>
+</head>
+<body>
+<div  style = "float:left;width:350px;height:100%">
+<div id = "accordion_bottom">
+    <h3> Step One: Select Park System(s) </h3>
+        <div class = "detail"> 
+            Cuyahoga County <br/> 
+            CVNP <br/>
+            Summit County <br/>
+	</div>
+    <h3 style = "margin-bottom:0px;"> Step Two: Select Park(s) </h3>
+        <div id = "parklist" class = "detail" style = "margin-top:0px;overflow:scroll;">
+            All Parks in Selected Count(ies)y. <br/>
+            Park<br/>
+            Park<br/>
+            Park<br/>
+            Park<br/>
+            Park<br/>
+            Park<br/>
+            Park<br/>
+            Park<br/>
+        </div>
+<div style ="text-align:center;vertical-align:bottom;"><br/>
+    <input type ="button" value = "Check Access By Park(s)"> 
+<div>
+    <h2 style = "margin-bottom:0px;margin-top:0px;">-OR-</h2>
+    LOG PARAMETERS
+</div>
+    <input type ="button" value = "Check Access By Address"> 
+</div>
+</div>
+</div>
+<div id = "map_div" style = "float:left;padding-left:18px;margin-top:5%;width:45%"> Results here </div>
+</body>

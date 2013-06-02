@@ -1,12 +1,29 @@
 <html>
 <head>
 <link rel = "stylesheet" type = "text/css" href = "http://bootswatch.com/amelia/bootstrap.min.css">
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.1/jquery.min.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-
 ui.min.js"></script>
 <script type = "text/javascript">
 $(document).ready(function() {
+        $('.SummitCountyparks').hide();
+        $('.CVNPparks').hide();
+        $('.CuyahogaCountyparks').hide();
         $( "#accordion_bottom").accordion({collapsible: true, autoHeight: false}); 
+        $.ajax({
+            url: "http://api.census.gov/data/2010/sf1?get=P0010001&for=state:*&key=c494feb17269e3f3e0bba78162e9d8d260d7c406",
+            success: function(data) {
+                $('#map_div').html(data);
+	    }
+        });
+        $('.showhide').change(function(){
+            if($('#' + this.id).is(':checked')) {
+                $("." + this.id + "parks").show(); 
+            }
+            else {
+                $("." + this.id + "parks").hide(); 
+            }
+        });
 });
 </script>
 <style type = "text/css">
@@ -32,20 +49,23 @@ height:80px;
 </style>
 </head>
 <body>
-<div  style = "float:left;width:350px;height:100%">
+<div  style = "float:left;width:350px;height:95%;padding-left:8px;padding-top:8px;">
 <div id = "accordion_bottom">
     <h3> Step One: Select Park System(s) </h3>
         <div class = "detail"> 
-            Cuyahoga County <br/> 
-            CVNP <br/>
-            Summit County <br/>
+            <input class = "showhide" type = "checkbox" id = "CuyahogaCounty">
+                Cuyahoga County <br/>
+            <input class = "showhide" type = "checkbox" id = "CVNP" > 
+                CVNP <br/>
+            <input class = "showhide" type = "checkbox" id = "SummitCounty" > 
+                Summit County <br/>
 	</div>
     <h3 style = "margin-bottom:0px;"> Step Two: Select Park(s) </h3>
         <div id = "parklist" class = "detail" style = "margin-top:0px;overflow:scroll;">
+<span class = "CuyahogaCountyparks">  Cuyahoga Park<br/> </span>
+<span class = "CVNPparks">CVNP Park<br/> </span>
+<span class = "SummitCountyparks">Summit County Park<br/></span>
             All Parks in Selected Count(ies)y. <br/>
-            Park<br/>
-            Park<br/>
-            Park<br/>
             Park<br/>
             Park<br/>
             Park<br/>
